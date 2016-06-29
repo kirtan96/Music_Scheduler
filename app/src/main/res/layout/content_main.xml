@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.kirtan.musicscheduler.MainActivity"
+    tools:showIn="@layout/activity_main"
+    android:background="#FFFFF8E1">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/relativeLayout"
+        android:background="@color/accent_material_dark"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:padding="10dp">
+
+        <SeekBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/seekBar"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/playPause"
+            android:layout_below="@+id/seekBar"
+            android:layout_centerHorizontal="true"
+            android:src="@android:drawable/ic_media_play"
+            app:backgroundTint="@color/design_textinput_error_color_dark" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/next"
+            android:layout_marginLeft="40dp"
+            android:layout_marginStart="40dp"
+            android:src="@android:drawable/ic_media_next"
+            android:layout_below="@+id/seekBar"
+            android:layout_toRightOf="@+id/playPause"
+            android:layout_toEndOf="@+id/playPause"
+            app:backgroundTint="@color/colorPrimary" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/previous"
+            android:src="@android:drawable/ic_media_previous"
+            android:layout_marginRight="40dp"
+            android:layout_marginEnd="40dp"
+            android:layout_below="@+id/seekBar"
+            android:layout_toLeftOf="@+id/playPause"
+            android:layout_toStartOf="@+id/playPause"
+            app:backgroundTint="@color/colorPrimary" />
+
+    </RelativeLayout>
+
+    <ExpandableListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/listView"
+        android:layout_below="@+id/relativeLayout"
+        android:layout_alignLeft="@+id/relativeLayout"
+        android:layout_alignStart="@+id/relativeLayout"
+        android:layout_margin="5dp"
+        android:background="#00ffffff" />
+
+</RelativeLayout>
