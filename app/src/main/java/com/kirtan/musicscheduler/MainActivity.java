@@ -73,14 +73,45 @@ public class MainActivity extends AppCompatActivity {
                     int groupPosition = ExpandableListView.getPackedPositionGroup(id);
                     int childPosition = ExpandableListView.getPackedPositionChild(id);
 
-                    //TODO: OnLongClick for child
+                    showDelete(groupPosition, childPosition);
+
 
                     return true;
+                }
+                else if(ExpandableListView.getPackedPositionType(id) == ExpandableListView.PACKED_POSITION_TYPE_GROUP) {
+                    //TODO: longClick on group
                 }
 
                 return false;
             }
         });
+    }
+
+    private void showDelete(final int g,final int c) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setItems(new String[]{"Delete"}, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                if(which == 0)
+                {
+                    delete(g, c);
+                }
+            }
+        });
+        builder.show();
+    }
+
+    private void delete(int g, int c) {
+        String s = timeList.get(g);
+        String tmp = "";
+        ArrayList<String> al = hashMap.get(s);
+        al.remove(c);
+        hashMap.put(s, al);
+        for(String x: al){
+            tmp += x + SPLITTER;
+        }
+        editor.putString(s, tmp).apply();
+        updateList();
     }
 
     private void updateList() {
