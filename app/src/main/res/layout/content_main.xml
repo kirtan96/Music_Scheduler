@@ -16,7 +16,8 @@
         android:background="@color/accent_material_dark"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:padding="10dp">
+        android:padding="10dp"
+        android:layout_marginBottom="10dp">
 
         <SeekBar
             android:layout_width="wrap_content"
@@ -67,10 +68,82 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/listView"
+        android:background="#00ffffff"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_below="@+id/Sunday"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp" />
+
+    <Button
+        android:layout_width="45dp"
+        android:layout_height="wrap_content"
+        android:text="S"
+        android:id="@+id/Sunday"
         android:layout_below="@+id/relativeLayout"
-        android:layout_alignLeft="@+id/relativeLayout"
-        android:layout_alignStart="@+id/relativeLayout"
-        android:layout_margin="5dp"
-        android:background="#00ffffff" />
+        android:layout_alignStart="@+id/listView"
+        android:background="#fff"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp" />
+
+    <Button
+        android:layout_width="45dp"
+        android:layout_height="wrap_content"
+        android:text="M"
+        android:id="@+id/Monday"
+        android:layout_below="@+id/relativeLayout"
+        android:layout_toEndOf="@+id/Sunday"
+        android:background="#fff"
+        android:layout_marginRight="5dp" />
+
+    <Button
+        android:layout_width="45dp"
+        android:layout_height="wrap_content"
+        android:text="T"
+        android:id="@+id/Tuesday"
+        android:layout_below="@+id/relativeLayout"
+        android:layout_toEndOf="@+id/Monday"
+        android:layout_marginRight="5dp"
+        android:background="#fff" />
+
+    <Button
+        android:layout_width="45dp"
+        android:layout_height="wrap_content"
+        android:text="W"
+        android:id="@+id/Wednesday"
+        android:layout_below="@+id/relativeLayout"
+        android:layout_toEndOf="@+id/Tuesday"
+        android:layout_marginRight="5dp"
+        android:background="#fff" />
+
+    <Button
+        android:layout_width="45dp"
+        android:layout_height="wrap_content"
+        android:text="T"
+        android:id="@+id/Thursday"
+        android:layout_marginRight="5dp"
+        android:background="#fff"
+        android:layout_below="@+id/relativeLayout"
+        android:layout_toEndOf="@+id/Wednesday" />
+
+    <Button
+        android:layout_width="45dp"
+        android:layout_height="wrap_content"
+        android:text="F"
+        android:id="@+id/Friday"
+        android:layout_marginRight="5dp"
+        android:background="#fff"
+        android:layout_below="@+id/relativeLayout"
+        android:layout_toEndOf="@+id/Thursday" />
+
+    <Button
+        android:layout_width="45dp"
+        android:layout_height="wrap_content"
+        android:text="S"
+        android:id="@+id/Saturday"
+        android:layout_marginRight="5dp"
+        android:background="#fff"
+        android:layout_alignTop="@+id/Friday"
+        android:layout_toEndOf="@+id/Friday" />
 
 </RelativeLayout>
